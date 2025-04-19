@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        \App\Console\Commands\RMQ\RMQConsumeCommand::class,
+        \App\Console\Commands\RMQ\RMQDeclarePackageExchanges::class,
     ];
 
     /**
