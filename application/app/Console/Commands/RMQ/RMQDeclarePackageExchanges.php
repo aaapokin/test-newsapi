@@ -3,9 +3,9 @@
 
 namespace App\Console\Commands\RMQ;
 
-use App\Facades\Log;
 use App\Infrastructure\RMQ\Base\IPackage;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 
 class RMQDeclarePackageExchanges extends Command

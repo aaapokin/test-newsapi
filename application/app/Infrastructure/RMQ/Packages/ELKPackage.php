@@ -16,7 +16,7 @@ class ELKPackage extends APackage
 
     public function __construct(protected readonly array $arr = [])
     {
-        $this->headers()->set(ServiceOrder::RABBIT_HEADER_REQ_ID, app(ServiceOrder::RABBIT_HEADER_REQ_ID));
+//        $this->headers()->set(ServiceOrder::RABBIT_HEADER_REQ_ID, app(ServiceOrder::RABBIT_HEADER_REQ_ID));
     }
 
     public function getConnection(): AMQPStreamConnection

@@ -173,14 +173,14 @@ abstract class AConsumer implements IConsumer
         }
         $track_id = Arr::get($this->body, 'meta.track_id');
         return new MetaDto(
-            track_id: $track_id ? Uuid::fromString($track_id) : null,
             id: Uuid::fromString(Arr::get($this->body, 'meta.id')),
             publish_time: (int)Arr::get($this->body, 'meta.publish_time'),
             publish_microseconds: (int)Arr::get($this->body, 'meta.publish_microseconds'),
             publisher: (string)Arr::get($this->body, 'meta.publisher'),
             documentations: new DocumentationDTO(
                 package: (string)Arr::get($this->body, 'meta.documentations.package')
-            )
+            ),
+            track_id: $track_id ? Uuid::fromString($track_id) : null
         );
     }
 
