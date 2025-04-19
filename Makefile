@@ -24,6 +24,9 @@ test-unit:
 test-feature:
 	docker compose $(COMPOSE_FILE) exec backend ./vendor/bin/phpunit --filter Feature
 
+lint:
+	docker compose $(COMPOSE_FILE) exec backend ./vendor/bin/phpstan analyse ./app
+
 # прример запуска джобы dispatch(new \App\Jobs\GetNewsJob());
 tinker:
 	docker compose $(COMPOSE_FILE) exec backend php artisan tinker

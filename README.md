@@ -11,16 +11,16 @@
 
 `docker rm -f $(docker ps -qa)`
 
-Пользователь по умолчанию "1000:1000" - поменяйте, если нужно в env
+Пользователь по умолчанию "1000:1000" - поменяйте, если нужно в env  
 `make up`
 
 Проваливаемся в контейнер  
 `make bash`
 
 larastan  
-`./vendor/bin/phpstan analyse ./app`
+`make lint`
 
-Тесты
+Тесты  
 `make test`
 
 

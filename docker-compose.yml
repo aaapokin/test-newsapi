@@ -31,13 +31,13 @@ services:
     <<: *backend
     command: sh -c "/docker-entrypoint.d/custom-entrypoint.sh && php-fpm"
 
-  #  job:
-  #    <<: *backend
-  #    command: sh -c "php artisan queue:work --tries=1 --memory=50 --timeout=3600"
+  job:
+    <<: *backend
+    command: sh -c "php artisan queue:work --tries=1 --memory=50 --timeout=3600"
 
-  #    schedule:
-  #        <<: *backend
-  #        command: php /application/artisan schedule:work
+  schedule:
+    <<: *backend
+    command: sh -c "php /application/artisan schedule:work"
 
   postgres:
     build: docker/postgres
